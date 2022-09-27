@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퇴사각,,</title>
+    <style>
+        input{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            justify-content: center;
+        }
+        #설명{
+            display: grid;
+        }
+        #grid{
+            display: grid;
+            grid-template-columns: 70px 70px 70px 70px 70px 70px;
+            margin: 5px;
+            margin-left: 760px;
+            margin-top: 30px;
+        }
+        #grid2{
+            display: grid;
+            grid-template-columns: 70px 70px 70px 70px 70px 70px;
+            margin: 5px;
+            margin-left: 760px;
+            margin-top: 30px;
+        }
+        h1{
+            text-align: center;
+            font-size: 45;
+            border-bottom:3px solid rgb(0, 59, 100);
+            padding: 25px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>홍기원 퇴사 프로젝트</h1>
+    <div id="grid">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+    <input class="input" maxlength="1">
+    <button>제출하기</button>
+    </div>
+
+    <script>
+        var 정답 = 'apple';
+        document.querySelector('button').addEventListener('click',
+            function(){
+            var input = document.querySelectorAll('.input');
+            for(let i=0; i<5; i++){
+                if(input[i].value === 정답[i]){
+                    input[i].style.backgroundColor = 'olive';
+                } else if(정답.includes(input[i].value)) {
+                    input[i].style.backgroundColor = 'rgb(197, 224, 180)';
+                } else {
+                    input[i].style.backgroundColor = 'grey';
+                }
+                input[i].classList.remove('input');
+                }
+                var template = `<div>
+                    <div id="grid2">
+                        <input class="input" maxlength="1">
+                        <input class="input" maxlength="1">
+                        <input class="input" maxlength="1">
+                        <input class="input" maxlength="1">
+                        <input class="input" maxlength="1">
+                    </div>
+                    </div>`;
+                    document.querySelector('body').insertAdjacentHTML('beforeend', template);
+            })
+    </script>
+    <p id="설명">
+        값과 자리가 모두 일치할 경우 녹색, 자리는 틀렸을 경우 연두색, 값이 정답에 포함되지 않는 경우 회색
+    </p>
+</body>
+</html>
