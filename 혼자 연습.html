@@ -10,15 +10,31 @@
             height: 50px;
             text-align: center;
             justify-content: center;
+            margin-bottom: 0px;
         }
-        #설명{
+        button{
+            width: 55px;
+            height: 55px;
+            text-align: center;
+            justify-content: center;
+            background-color: rgb(159, 218, 236);   
+            border-color: rgb(161, 116, 116);         
+        }
+        #main{
             display: grid;
+            grid-template-columns: 500px 1fr;
+        }
+        #설명 {
+            font-size: 16px;
+            border-right: 2px solid rgb(0, 59, 100);
+            margin: 5px;
+            padding: 5px;
         }
         #grid{
             display: grid;
             grid-template-columns: 70px 70px 70px 70px 70px 70px;
             margin: 5px;
-            margin-left: 760px;
+            margin-left: 260px;
             margin-top: 30px;
         }
         #grid2{
@@ -35,10 +51,17 @@
             padding: 25px;
             margin: 0;
         }
+
     </style>
 </head>
 <body>
     <h1>홍기원 퇴사 프로젝트</h1>
+    <div id="main">
+       <div id="설명">
+            <p>
+                값과 자리가 모두 일치할 경우 녹색, 자리는 틀렸을 경우 연두색,<br>값이 정답에 포함되지 않는 경우 회색
+            </p>
+        </div>
     <div id="grid">
     <input class="input" maxlength="1">
     <input class="input" maxlength="1">
@@ -75,8 +98,6 @@
                     document.querySelector('body').insertAdjacentHTML('beforeend', template);
             })
     </script>
-    <p id="설명">
-        값과 자리가 모두 일치할 경우 녹색, 자리는 틀렸을 경우 연두색, 값이 정답에 포함되지 않는 경우 회색
-    </p>
+    </div>
 </body>
 </html>
